@@ -1,0 +1,235 @@
+/*
+--- 01 typography system
+
+- FONT SIZE SYSTEM (px)
+10 / 12 / 14 / 16 / 18 / 20 / 24 / 30 / 36 / 44 / 52 / 62 / 74 / 86 / 98
+
+- FONT WEIGHT:
+fefault: 400
+medium: 500
+semi-: 500
+bold: 700
+
+- LINE HEIGHT:
+default : 1
+paragraph : 1.6
+
+--- 02 color
+
+- Primary:  #e67e22
+- Tints:  #fae5d3
+- Shades: #cf711f
+- Accents: 
+- Greys: #555 #333
+
+---05 shadows
+0 2.4rem 4.8rem rgba(0,0,0,0.075);
+
+--- 06 border-redius
+default 9px
+medium: 12px
+
+--- 07 whitespace
+- SPACING SYSTEM (px)
+2 / 4 / 8 / 12 / 16 / 24 / 32 / 48 / 64 / 80 / 96 / 128
+*/
+.test-note{
+    /* width: 1000px; */
+    /* max-width: 1000px; */
+    max-width: 50rem;
+    font-size: 2rem;
+    padding: 4rem;
+    color: aliceblue;
+    background-color: rebeccapurple;
+
+}
+
+
+*{
+    padding: 0;
+    margin: 0;
+    box-sizing: border-box;
+}
+/* global set for focus */
+*:focus{
+    outline: none;
+    outline: 4px dotted #e67e22;
+    /* box-shadow: 0 0 0 0.8rem rgba(237, 138, 51, 0.509); */
+}
+
+html{
+    /* the defalut font size is 16px */
+    /* percentage of user's browser font size setting */
+    font-size: 62.5%;
+    overflow-x: hidden;
+}
+
+body{
+    font-family: "Rubik",sans-serif;
+    line-height: 1;
+    font-weight: 400;
+    color: #555;
+
+    overflow-x: hidden;
+}
+strong{
+    font-weight: 500;
+}
+/* ************************** */
+/* general components */
+/* ************************** */
+.heading-primary,
+.heading-secondary,
+.heading-tertiary{
+    font-family: "Rubik", "sans-serif";
+    font-weight: 700;
+    color: #333;
+}
+.heading-primary{  
+    font-size: 5.2rem;
+    line-height: 1.05;
+    margin-bottom: 3.2rem;
+}
+.heading-secondary{
+    font-size: 4.4rem;
+    line-height: 1.2;
+   margin-bottom: 9.6rem;
+}
+.subHeading{
+    display: block;
+    font-size: 1.6rem;
+    font-weight: 500;
+    color: #cf711f;
+    text-transform: uppercase;
+    margin-bottom: 1.6rem;
+    letter-spacing: 0.75px;
+}
+
+.heading-tertiary{
+    font-size: 3rem;
+    line-height: 1.2;
+    margin-bottom: 3.2rem;
+}
+.btn,
+.btn:link,
+.btn:visited{
+    display: inline-block;   
+    text-decoration: none;
+    font-size: 1.6rem;  
+    font-weight: 500;
+    padding: 1.6rem 3.2rem;
+    border-radius: 9px;
+    border: none;
+    cursor: pointer;
+
+    font-family: inherit;
+    color: inherit;
+    width:fit-content;
+
+    /* set the transition time on original state */
+    transition: all 0.3s;
+}
+
+.btn--full:link,
+.btn--full:visited{
+    background-color: #e67e22;
+    color:#fff;
+}
+.btn--full:hover,
+.btn--full:active{
+    background-color: #cf711f;
+}
+
+.btn--outline:link,
+.btn--outline:visited{
+    border: 1px solid #555;
+    box-shadow: 0 2.4rem 4.8rem rgba(0,0,0,0.075);
+    /* background-color:#fa814d; */
+    color: #555;
+}
+.btn--outline:hover,
+.btn--outline:active{
+    background-color: #ef9954c8;
+    
+    /* trick to add border inside */
+    /* box-shadow: inset 0 0 0 3px #fff; */
+}
+
+/* aunthcr style */
+.link:visited,
+.link:link{
+    /* display: inline-block; */
+    color: #e67e22;
+    text-decoration: none;
+    border-bottom: 2px solid currentColor;/* use the keyword to use same color */
+    padding-bottom: 2px;
+    transition: all 0.3s;
+}
+.link:hover,
+.link:active{
+    color: #cf711f;
+    border-bottom: 2px solid transparent;/* the keyword to remove the color */
+}
+
+.list{
+    list-style: none;
+    display: flex;
+    flex-direction: column;
+    gap: 2.4rem;
+}
+.list-item{
+    font-size: 1.8rem;
+    display: flex;
+    align-items: center;
+    gap:1.2rem;
+}
+.list-icon{
+    width: 3rem;
+    color: #e67e22;
+}
+
+/* helper */
+.margin-right-sm{
+    margin-right: 0.8rem !important;
+}
+.margin-bottom-md{
+    margin-bottom: 4.8rem !important;
+}
+.margin-top-lg{
+    margin-top: 9.6rem !important;
+}
+
+.center-text{
+    text-align: center;
+}
+
+/* reuse grid */
+.grid{
+    display: grid;
+    row-gap:9.6rem; 
+    column-gap: 6.4rem;    
+}
+
+.grid--two-cols{
+    grid-template-columns: repeat(2,1fr);
+}
+.grid--three-cols{
+    grid-template-columns: repeat(3,1fr);
+}
+.grid--four-cols{
+    grid-template-columns: repeat(4,1fr);
+}
+.grid--five-cols{
+    grid-template-columns: repeat(5,1fr);
+}
+
+.grid-center-v{
+    align-items: center;
+}
+
+.container{
+    /* 1140px */
+    max-width: 110rem;  /* used to be 120, but my screen not that wide. the hero set to 120, wider than regular container */
+    padding: 0 3.2rem;
+    margin: 0 auto;
+}
