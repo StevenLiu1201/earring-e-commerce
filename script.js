@@ -1,8 +1,6 @@
-function createMeal(imgPath,title, price, tags) {
+function createMeal(imgPath, title, price, tags) {
   const meal = document.createElement("div");
   meal.classList.add("meal");
-
-  
 
   const mealImg = document.createElement("img");
   mealImg.src = imgPath;
@@ -16,7 +14,7 @@ function createMeal(imgPath,title, price, tags) {
     mealTags.classList.add("meal-tags");
     tags.forEach((tag) => {
       const tagElement = document.createElement("span");
-      tagElement.classList.add("tag","tag--"+tag);
+      tagElement.classList.add("tag", "tag--" + tag);
       tagElement.textContent = tag;
       mealTags.appendChild(tagElement);
     });
@@ -46,35 +44,97 @@ function createMeal(imgPath,title, price, tags) {
   addToCartLink.textContent = "Add to Cart";
   mealContent.appendChild(addToCartLink);
 
-  meal.append(mealImg,mealContent)
+  meal.append(mealImg, mealContent);
 
   return meal;
 }
 
 // Sample data
 const meals = [
-  {imgPath:"img/earings/crystal maple.jpg", title: "crystal maple", price: 15.99, tags: ["newArrive","stud"] },
-  {imgPath:"img/earings/grey leaves-stud.jpg", title: "grey leaves", price: 18.99, tags: ["stud"] },
   {
-    imgPath:"img/earings/cream donut-hoop.jpg",
+    imgPath: "img/earings/crystal maple.jpg",
+    title: "crystal maple",
+    price: 15.99,
+    tags: ["newArrive", "stud"],
+  },
+  {
+    imgPath: "img/earings/grey leaves-stud.jpg",
+    title: "grey leaves",
+    price: 18.99,
+    tags: ["stud"],
+  },
+  {
+    imgPath: "img/earings/cream donut-hoop.jpg",
     title: "cream donut",
     price: 18.99,
     tags: ["newArrive", "hoop"],
   },
-  {imgPath:"img/earings/cream donut-hoop.jpg", title: "cream donut", price: 18.99, tags: ["newArrive","hoop"] },
-  {imgPath:"img/earings/crystal flower-drop.jpg", title: "crystal flower", price: 18.99, tags: ["drop"] },
-  {imgPath:"img/earings/long island-stud.jpg", title: "long island", price: 18.99, tags: ["newArrive","stud"] },
-  {imgPath:"img/earings/double square-stud.jpg", title: "double square", price: 18.99, tags: ["newArrive","stud"] },
-  {imgPath:"img/earings/flower in pearls-stud.jpg", title: "flower in pearls", price: 18.99, tags: ["stud"] },
-  {imgPath:"img/earings/flying heart-dangle.jpg", title: "flying heart", price: 18.99, tags: ["dangle"] },
-  {imgPath:"img/earings/in and out-drop.jpg", title: "in and out", price: 18.99, tags: ["drop"] },
-  {imgPath:"img/earings/knot pearls-drop.jpg", title: "knot pearls", price: 18.99, tags: ["drop"] },
-  {imgPath:"img/earings/Mermaid-dangle.jpg", title: "mermaid", price: 18.99, tags: ["dangle"] },
+  {
+    imgPath: "img/earings/cream donut-hoop.jpg",
+    title: "cream donut",
+    price: 18.99,
+    tags: ["newArrive", "hoop"],
+  },
+  {
+    imgPath: "img/earings/crystal flower-drop.jpg",
+    title: "crystal flower",
+    price: 18.99,
+    tags: ["drop"],
+  },
+  {
+    imgPath: "img/earings/long island-stud.jpg",
+    title: "long island",
+    price: 18.99,
+    tags: ["newArrive", "stud"],
+  },
+  {
+    imgPath: "img/earings/double square-stud.jpg",
+    title: "double square",
+    price: 18.99,
+    tags: ["newArrive", "stud"],
+  },
+  {
+    imgPath: "img/earings/flower in pearls-stud.jpg",
+    title: "flower in pearls",
+    price: 18.99,
+    tags: ["stud"],
+  },
+  {
+    imgPath: "img/earings/flying heart-dangle.jpg",
+    title: "flying heart",
+    price: 18.99,
+    tags: ["dangle"],
+  },
+  {
+    imgPath: "img/earings/in and out-drop.jpg",
+    title: "in and out",
+    price: 18.99,
+    tags: ["drop"],
+  },
+  {
+    imgPath: "img/earings/knot pearls-drop.jpg",
+    title: "knot pearls",
+    price: 18.99,
+    tags: ["drop"],
+  },
+  {
+    imgPath: "img/earings/Mermaid-dangle.jpg",
+    title: "mermaid",
+    price: 18.99,
+    tags: ["dangle"],
+  },
 ];
 
 // Render meals
 const mealContainer = document.getElementById("earringContainer");
-meals.forEach((meal) => {
-  const mealElement = createMeal(meal.imgPath,meal.title, meal.price, meal.tags);
-  mealContainer.appendChild(mealElement);
-});
+if (mealContainer) {
+  meals.forEach((meal) => {
+    const mealElement = createMeal(
+      meal.imgPath,
+      meal.title,
+      meal.price,
+      meal.tags
+    );
+    mealContainer.appendChild(mealElement);
+  });
+}

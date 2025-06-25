@@ -82,7 +82,7 @@
         grid-template-columns: 1fr;
     }
     .gallery{
-        grid-template-columns: repeat(6,1fr);
+        grid-template-columns: repeat(3,1fr);
     }
     .cta-grid-container{
         grid-template-columns: 3fr 2fr;
